@@ -13,9 +13,7 @@
 <meta property="og:site_name" content="Palintropic">
 <meta property="og:title" content="Palintropic — Applied AI Research & Development">
 <meta property="og:description" content="Power, held in tension. Applied AI research from Bengaluru for how people learn, heal and live.">
-<meta property="og:url" content="https://palintropic.in/">
 <meta property="og:image" content="https://palintropic.in/logo.png">
-<meta name="twitter:card" content="summary">
 <style>html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -734,6 +732,52 @@ section[id],header[id]{scroll-margin-top:72px}
 .mode-toggle svg{width:16px; height:16px; fill:none; stroke:var(--accent); stroke-width:1.8; stroke-linecap:round}
 footer{padding-bottom:36px}
 
+/* IgniteGyan section v3 */
+.ig-head{grid-template-columns:minmax(0,1fr) minmax(0,1.12fr); gap:clamp(28px,4vw,64px); align-items:center}
+.ig-head h2{font-size:clamp(34px,4.2vw,60px)}
+.ig-head .ig-lede{margin-top:22px; font-size:clamp(16px,1.35vw,18.5px); max-width:46ch}
+.ig-mini{display:flex; flex-wrap:wrap; gap:8px; margin-top:22px}
+.ig-mini span{font-size:13.5px; color:var(--muted); padding:7px 12px; border:1px solid var(--line); border-radius:999px; background:var(--paper)}
+.ig-mini b{color:var(--ink); font-weight:600}
+.focus-stage{height:auto; aspect-ratio:16/10.5; max-height:420px; border-radius:24px; box-shadow:0 30px 60px -40px color-mix(in srgb, var(--accent) 45%, rgba(0,0,0,.35))}
+.fs-bar{position:absolute; top:0; left:0; right:0; z-index:4; display:flex; align-items:center; gap:12px; padding:12px 16px; border-bottom:1px solid var(--line); background:color-mix(in srgb, var(--paper) 85%, transparent); font-family:var(--mono); font-size:11.5px; color:var(--muted)}
+.fs-bar .dots{display:flex; gap:5px} .fs-bar .dots i{width:8px; height:8px; border-radius:50%; background:var(--line)}
+.fs-bar .dots i:first-child{background:color-mix(in srgb, #ff5f57 70%, var(--line))}
+.fs-bar .fsb{display:none; color:var(--accent)}
+.focused .fs-bar .fsa{display:none} .focused .fs-bar .fsb{display:inline}
+.dchips{top:0}
+.focus-stage .journey{top:50px; left:3%; right:auto; bottom:auto; width:94%; height:calc(100% - 90px)}
+.jp-bg{fill:none; stroke:var(--line); stroke-width:6; stroke-linecap:round; opacity:0; transition:opacity .6s}
+.focused .jp-bg{opacity:1}
+.jp{stroke-width:4}
+.nd .halo{fill:color-mix(in srgb, var(--accent) 14%, transparent); stroke:none}
+.nd .ring{fill:var(--paper); stroke:var(--accent); stroke-width:2.5}
+.nd .ic-s{fill:none; stroke:var(--accent); stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round}
+.nd .ic-f{fill:var(--accent)}
+.nd text{font:700 14px var(--body); fill:var(--ink)}
+.nd text.st{font:500 10px var(--mono); fill:var(--accent); letter-spacing:.1em}
+.nd text.sub{font:500 11px var(--body); fill:var(--muted)}
+.runner{r:7}
+.focus-cap{bottom:14px}
+@media (max-width:900px){.ig-head{grid-template-columns:1fr}.focus-stage{aspect-ratio:auto; height:340px}}
+
+/* tighter vertical rhythm */
+section{padding-block:clamp(48px,6vw,88px)}
+.careers{padding-block:clamp(24px,3vw,40px)}
+.head{margin-bottom:clamp(28px,3.5vw,48px)}
+.figures{margin-top:clamp(36px,4.5vw,60px); padding-top:28px}
+.crew{margin-top:clamp(32px,4vw,56px)}
+.cblock{padding-block:clamp(40px,5vw,72px)}
+.cview .chero{padding-block:clamp(40px,5vw,72px) clamp(32px,4vw,52px)}
+.ig-feats{margin-top:clamp(24px,3vw,36px)}
+.ig-facts{margin-top:clamp(28px,3.5vw,44px)}
+.hero .wrap{padding-block:clamp(44px,6vw,88px) clamp(36px,5vw,64px)}
+.horizon .row{margin-top:32px}
+
+.pair{row-gap:10px; padding-block:clamp(18px,2.4vw,30px)}
+.why{margin-top:0 !important}
+.pair .note{margin-top:0}
+.fuse{height:clamp(60px,6vw,80px)}
 /* glow field */
 #field{position:absolute; inset:0; width:100%; height:100%; z-index:0; pointer-events:none; display:block}
 #halo{position:absolute; left:0; top:0; width:700px; height:700px; border-radius:50%; pointer-events:none; z-index:0; opacity:.55; transition:opacity .6s; background:radial-gradient(closest-side, color-mix(in srgb, var(--accent) 22%, transparent), transparent 70%); will-change:transform}
@@ -867,12 +911,15 @@ footer{padding-bottom:36px}
       <div>
         <p class="eyebrow">From our labs · Flagship product</p>
         <h2 id="ig-h"><span class="sl">IgniteGyan.</span><span class="sl">Class, without the distractions.</span></h2>
+        <p class="ig-lede">A focused learning app for CBSE Maths and Science, Grades 6–10. Every chapter is broken into short topic videos, backed by the same tests schools set, with help from AI and real teachers whenever a student gets stuck.</p>
+        <div class="ig-mini"><span><b>Grades 6–10</b> CBSE</span><span><b>Maths</b> &amp; <b>Science</b></span><span><b>Nov 2026</b> launch</span></div>
       </div>
       <div class="focus-stage" id="focusStage" aria-hidden="true">
+        <div class="fs-bar"><span class="dots"><i></i><i></i><i></i></span><span class="fsa">Social feed · 12 notifications</span><span class="fsb">IgniteGyan · Class 8 · Force and Pressure</span></div>
         <canvas class="dlinks" aria-hidden="true"></canvas><div class="dchips"><span class="dchip" style="--i:0">New reel</span><span class="dchip" style="--i:1">+99 likes</span><span class="dchip" style="--i:2">Trending now</span><span class="dchip" style="--i:3">3 new messages</span><span class="dchip" style="--i:4">Autoplay next</span><span class="dchip" style="--i:5">Someone tagged you</span><span class="dchip" style="--i:6">Live now</span><span class="dchip" style="--i:7">Sale: 70% off</span><span class="dchip" style="--i:8">Story update</span><span class="dchip" style="--i:9">Watch this!</span><span class="dchip" style="--i:10">12 notifications</span><span class="dchip" style="--i:11">Game invite</span></div>
-        <svg class="journey" viewBox="0 0 610 260" preserveAspectRatio="xMidYMid meet">
-          <path id="jpath" class="jp" d="M50 196 C 110 196, 120 96, 180 96 S 250 176, 310 176 S 380 86, 440 86 S 520 156, 560 156"/>
-          <g class="nd" style="--k:0"><circle cx="50" cy="196" r="9"/><circle class="core" cx="50" cy="196" r="4"/><text x="50" y="226">Watch</text></g><g class="nd" style="--k:1"><circle cx="180" cy="96" r="9"/><circle class="core" cx="180" cy="96" r="4"/><text x="180" y="76">Quiz</text></g><g class="nd" style="--k:2"><circle cx="310" cy="176" r="9"/><circle class="core" cx="310" cy="176" r="4"/><text x="310" y="206">Test</text></g><g class="nd" style="--k:3"><circle cx="440" cy="86" r="9"/><circle class="core" cx="440" cy="86" r="4"/><text x="440" y="66">Ask</text></g><g class="nd" style="--k:4"><circle cx="560" cy="156" r="9"/><circle class="core" cx="560" cy="156" r="4"/><text x="560" y="186">Teacher</text></g>
+        <svg class="journey" viewBox="0 20 610 250" preserveAspectRatio="xMidYMid meet">
+          <path class="jp-bg" d="M60 190 C 115 190, 125 96, 180 96 S 250 176, 305 176 S 375 86, 430 86 S 505 156, 550 156"/><path id="jpath" class="jp" d="M60 190 C 115 190, 125 96, 180 96 S 250 176, 305 176 S 375 86, 430 86 S 505 156, 550 156"/>
+          <g class="nd" style="--k:0"><circle class="halo" cx="60" cy="190" r="22"/><circle class="ring" cx="60" cy="190" r="16"/><g transform="translate(60 190)"><path d="M-4 -5.5v11l9-5.5z" class="ic-f"/></g><text class="st" x="60" y="218">01</text><text x="60" y="234">Watch</text><text class="sub" x="60" y="250">Topic video</text></g><g class="nd" style="--k:1"><circle class="halo" cx="180" cy="96" r="22"/><circle class="ring" cx="180" cy="96" r="16"/><g transform="translate(180 96)"><path d="M-3.2 -3a3.2 3.2 0 1 1 4.3 3c-.8.3-1.1.8-1.1 1.4v.8M0 5v.1" class="ic-s"/></g><text class="st" x="180" y="40">02</text><text x="180" y="56">Quiz</text><text class="sub" x="180" y="72">Topic quiz</text></g><g class="nd" style="--k:2"><circle class="halo" cx="305" cy="176" r="22"/><circle class="ring" cx="305" cy="176" r="16"/><g transform="translate(305 176)"><path d="M-5 -7h7l3 3v11h-10z M-2.5 -1h5 M-2.5 2.5h3.5" class="ic-s"/></g><text class="st" x="305" y="204">03</text><text x="305" y="220">Test</text><text class="sub" x="305" y="236">Model test</text></g><g class="nd" style="--k:3"><circle class="halo" cx="430" cy="86" r="22"/><circle class="ring" cx="430" cy="86" r="16"/><g transform="translate(430 86)"><path d="M-7 -5.5a1.5 1.5 0 0 1 1.5-1.5h11a1.5 1.5 0 0 1 1.5 1.5v7a1.5 1.5 0 0 1-1.5 1.5h-7l-5.5 3.5z" class="ic-s"/></g><text class="st" x="430" y="30">04</text><text x="430" y="46">Ask</text><text class="sub" x="430" y="62">AI doubt help</text></g><g class="nd" style="--k:4"><circle class="halo" cx="550" cy="156" r="22"/><circle class="ring" cx="550" cy="156" r="16"/><g transform="translate(550 156)"><circle cx="0" cy="-3" r="3" class="ic-s"/><path d="M-6 7c.8-3.5 3.2-5 6-5s5.2 1.5 6 5" class="ic-s"/></g><text class="st" x="550" y="184">05</text><text x="550" y="200">Teacher</text><text class="sub" x="550" y="216">Live teacher</text></g>
           <circle class="runner" r="6"><animateMotion id="jrun" dur="6.5s" begin="indefinite" repeatCount="indefinite" rotate="auto"><mpath href="#jpath"/></animateMotion></circle>
         </svg>
         <p class="focus-cap"><span class="c1">Social feeds pull students everywhere.</span><span class="c2">IgniteGyan keeps them on one path.</span></p>
@@ -880,7 +927,6 @@ footer{padding-bottom:36px}
     </div>
     <div class="ig-grid">
       <div class="ig-copy">
-        <p class="ig-lede">A focused learning app for CBSE Maths and Science, Grades 6–10. Every chapter is broken into short topic videos, backed by the same tests schools set, with help from AI and real teachers whenever a student gets stuck.</p>
         <ul class="ig-feats">
           <li><span class="fi" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9.5v5l4-2.5z"/></svg></span><div><b>Topic-wise videos</b><span>Every CBSE chapter, topic by topic. No feeds, no reels — nothing to pull students away.</span></div></li>
           <li><span class="fi" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 4h8l3 3v13H5V4z"/><path d="M9 11h6M9 15h4"/></svg></span><div><b>School model tests</b><span>Unit Tests, Formative (FA) and Summative (SA) papers, in the format schools use.</span></div></li>
@@ -1141,7 +1187,7 @@ footer{padding-bottom:36px}
           <span class="pick" aria-hidden="true"></span></button>
       </div>
 
-      <div class="head" style="margin-top:clamp(56px,7vw,96px)">
+      <div class="head" style="margin-top:clamp(36px,4.5vw,60px)">
         <p class="eyebrow">Step 2</p>
         <h2><span class="sl">Choose how much.</span></h2>
       </div>
@@ -1161,7 +1207,7 @@ footer{padding-bottom:36px}
         </div>
       </div>
 
-      <div class="head" style="margin-top:clamp(56px,7vw,96px)">
+      <div class="head" style="margin-top:clamp(36px,4.5vw,60px)">
         <p class="eyebrow">Step 3</p>
         <h2><span class="sl">Tell us about you.</span></h2>
       </div>
@@ -1659,7 +1705,7 @@ footer{padding-bottom:36px}
     function colors(){var cs=getComputedStyle(document.documentElement); acc=cs.getPropertyValue('--accent').trim(); line=cs.getPropertyValue('--muted').trim();}
     function layout(){
       var r=st.getBoundingClientRect(), d=Math.min(2,devicePixelRatio||1); W=r.width; H=r.height; cv.width=W*d; cv.height=H*d; ctx.setTransform(d,0,0,d,0,0); colors();
-      N=chips.map(function(c,i){ var s=spots[i%spots.length], w=c.offsetWidth, x=Math.min(W-w-6, s[0]/100*W), y=s[1]/100*(H-40);
+      N=chips.map(function(c,i){ var s=spots[i%spots.length], w=c.offsetWidth, x=Math.min(W-w-6, s[0]/100*W), y=54+s[1]/100*(H-120);
         c.style.transform='translate('+x+'px,'+y+'px)'; c.style.setProperty('--d',(i*0.37%2).toFixed(2)+'s'); return {x:x+w/2, y:y+14}; });
       E=[]; N.forEach(function(a,i){ var ds=N.map(function(b,j){return [Math.hypot(a.x-b.x,a.y-b.y),j]}).filter(function(p){return p[1]!==i}).sort(function(p,q){return p[0]-q[0]});
         for(var k=0;k<3;k++){ var j=ds[k][1]; if(!E.some(function(e){return (e[0]===i&&e[1]===j)||(e[0]===j&&e[1]===i)})) E.push([i,j]); } });
