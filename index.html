@@ -778,6 +778,91 @@ section{padding-block:clamp(48px,6vw,88px)}
 .why{margin-top:0 !important}
 .pair .note{margin-top:0}
 .fuse{height:clamp(60px,6vw,80px)}
+/* IgniteGyan animation sits directly on the section, no card */
+.focus-stage{border:0 !important; background:transparent !important; box-shadow:none !important; border-radius:0 !important; overflow:visible}
+.focus-stage .fs-bar{display:none}
+.focus-stage .journey{top:10px; height:calc(100% - 50px)}
+.dchip{box-shadow:none}
+
+/* IgniteGyan v4: one continuous scene */
+.focus-stage.v4 .journey{visibility:visible; opacity:1; z-index:1; transition:opacity .6s}
+.focus-stage.v4 .dchips{z-index:2; opacity:1}
+.focus-stage.v4 .dlinks{opacity:1; z-index:0}
+.focus-stage.v4 .dchip{transition:opacity .8s ease, filter .8s ease; opacity:1}
+.focus-stage.v4 .dchip.gone{opacity:0 !important; filter:blur(5px); animation:none}
+.focus-stage.v4 .jp-bg{opacity:.45}
+.focus-stage.v4 .nd{opacity:.2; transform:scale(.8); transition:opacity .6s ease, transform .7s cubic-bezier(.3,1.6,.4,1); transition-delay:0s}
+.focus-stage.v4 .nd.on{opacity:1; transform:none}
+.focus-stage.v4 .focus-cap .c1{opacity:1} .focus-stage.v4 .focus-cap .c2{opacity:0}
+.focus-stage.v4.done .focus-cap .c1{opacity:0} .focus-stage.v4.done .focus-cap .c2{opacity:1; transition-delay:0s}
+.focus-stage.v4.running .runner{opacity:1 !important}
+.focus-stage.v4.fading .journey,.focus-stage.v4.fading .focus-cap{opacity:0}
+
+/* IgniteGyan v5: learning stops live inside the distraction web */
+.focus-stage.v5 .journey{display:none}
+.focus-stage.v5 .dchips{z-index:2; opacity:1}
+.focus-stage.v5 .dlinks{opacity:1; z-index:0}
+.focus-stage.v5 .dchip{transition:opacity .8s ease, filter .8s ease, background .5s, color .5s, border-color .5s, box-shadow .5s; opacity:1}
+.focus-stage.v5 .dchip.gone{opacity:0 !important; filter:blur(5px); animation:none}
+.focus-stage.v5 .dchip.learn b{font-family:var(--mono); font-size:10px; font-weight:500; margin-right:6px; opacity:.55}
+.focus-stage.v5 .dchip.learn.on{background:var(--accent); color:var(--on-accent); border-color:var(--accent); animation:none; box-shadow:0 0 0 5px color-mix(in srgb, var(--accent) 22%, transparent), 0 10px 24px -10px var(--accent); font-weight:700}
+.focus-stage.v5 .dchip.learn.on b{opacity:.8}
+.focus-stage.v5.glide .dchip.learn{transition:transform 1.3s cubic-bezier(.6,0,.2,1), opacity .6s, background .5s, color .5s, box-shadow .5s}
+.focus-stage.v5 .focus-cap .c1{opacity:1} .focus-stage.v5 .focus-cap .c2{opacity:0}
+.focus-stage.v5.done .focus-cap .c1{opacity:0} .focus-stage.v5.done .focus-cap .c2{opacity:1; transition-delay:0s}
+.focus-stage.v5.fading .dchip.learn,.focus-stage.v5.fading .dlinks,.focus-stage.v5.fading .focus-cap{opacity:0; transition:opacity .6s}
+
+.focus-stage.v5.final .journey{display:block; visibility:visible; opacity:1}
+.focus-stage.v5.final .dchip.learn{opacity:0 !important; transition:opacity .6s}
+.focus-stage.v5.fading .journey{opacity:0; transition:opacity .6s}
+
+/* IgniteGyan v6: path stops sit inside the web and are linked by the curve */
+.focus-stage.v6 .journey{display:block; visibility:visible; opacity:1; z-index:3; transition:opacity .6s}
+.focus-stage.v6 .dchips{z-index:2; opacity:1}
+.focus-stage.v6 .dlinks{opacity:1; z-index:0}
+.focus-stage.v6 .dchip{transition:opacity .8s ease, filter .8s ease; opacity:1}
+.focus-stage.v6 .dchip.gone{opacity:0 !important; filter:blur(5px); animation:none}
+.focus-stage.v6 .jp-bg{opacity:0}
+.focus-stage.v6.done .jp-bg{opacity:.4}
+.focus-stage.v6 .nd{opacity:1; transform:none; transition:transform .6s cubic-bezier(.3,1.6,.4,1); transition-delay:0s}
+.focus-stage.v6 .nd .halo{opacity:0; transition:opacity .5s}
+.focus-stage.v6 .nd .ring{fill:var(--paper); stroke:color-mix(in srgb, var(--muted) 70%, transparent); transition:stroke .5s}
+.focus-stage.v6 .nd .ic-s{stroke:var(--muted); transition:stroke .5s}
+.focus-stage.v6 .nd .ic-f{fill:var(--muted); transition:fill .5s}
+.focus-stage.v6 .nd text{fill:var(--muted); transition:fill .5s}
+.focus-stage.v6 .nd text.sub{opacity:0; transition:opacity .5s}
+.focus-stage.v6 .nd.on{transform:scale(1.08)}
+.focus-stage.v6 .nd.on .halo{opacity:1}
+.focus-stage.v6 .nd.on .ring{stroke:var(--accent)}
+.focus-stage.v6 .nd.on .ic-s{stroke:var(--accent)} .focus-stage.v6 .nd.on .ic-f{fill:var(--accent)}
+.focus-stage.v6 .nd.on text{fill:var(--ink)} .focus-stage.v6 .nd.on text.sub{opacity:1; fill:var(--muted)}
+.focus-stage.v6 .focus-cap .c1{opacity:1} .focus-stage.v6 .focus-cap .c2{opacity:0}
+.focus-stage.v6.done .focus-cap .c1{opacity:0} .focus-stage.v6.done .focus-cap .c2{opacity:1; transition-delay:0s}
+.focus-stage.v6.running .runner{opacity:1 !important}
+.focus-stage.v6.fading .journey,.focus-stage.v6.fading .focus-cap{opacity:0}
+
+/* stops look like the other tabs until they are linked */
+.focus-stage.v6 .nd .pill rect{fill:var(--ground); stroke:var(--line); stroke-width:1}
+.focus-stage.v6 .nd .pill text{font:600 13px var(--body); fill:var(--muted); text-anchor:middle}
+.focus-stage.v6 .nd .pill{transition:opacity .5s}
+.focus-stage.v6 .nd > :not(.pill){opacity:0; transition:opacity .6s .15s}
+.focus-stage.v6 .nd.on .pill{opacity:0}
+.focus-stage.v6 .nd.on > :not(.pill){opacity:1}
+.focus-stage.v6 .nd .halo{opacity:0}
+.focus-stage.v6 .nd.on .halo{opacity:1}
+.focus-stage.v6 .nd.on text.sub{opacity:1}
+.focus-stage.v6:not(.running) .runner{visibility:hidden}
+
+.focus-stage.v6.narrow .dchip{font-size:10.5px; padding:5px 9px}
+.focus-stage.v6 .dchip.mhide{display:none}
+
+.focus-stage.v6.narrow .nd .pill,.focus-stage.v6.narrow .nd > g:not(.pill){transform-box:fill-box; transform-origin:center; transform:scale(1.6)}
+/* grid version */
+.focus-stage.v6 .dchip{width:var(--cw,100px); height:var(--ch,30px); padding:0 !important; display:flex; align-items:center; justify-content:center; font-size:var(--cf,12px) !important; white-space:nowrap; overflow:hidden; box-sizing:border-box}
+.focus-stage.v6 .nd .pill text{font-weight:600}
+.focus-stage.v6.narrow .nd .pill,.focus-stage.v6.narrow .nd > g:not(.pill){transform:none}
+.focus-stage .journey{top:0 !important; left:0 !important; width:100% !important; height:calc(100% - 44px) !important}
+
 /* glow field */
 #field{position:absolute; inset:0; width:100%; height:100%; z-index:0; pointer-events:none; display:block}
 #halo{position:absolute; left:0; top:0; width:700px; height:700px; border-radius:50%; pointer-events:none; z-index:0; opacity:.55; transition:opacity .6s; background:radial-gradient(closest-side, color-mix(in srgb, var(--accent) 22%, transparent), transparent 70%); will-change:transform}
@@ -916,12 +1001,8 @@ section{padding-block:clamp(48px,6vw,88px)}
       </div>
       <div class="focus-stage" id="focusStage" aria-hidden="true">
         <div class="fs-bar"><span class="dots"><i></i><i></i><i></i></span><span class="fsa">Social feed · 12 notifications</span><span class="fsb">IgniteGyan · Class 8 · Force and Pressure</span></div>
-        <canvas class="dlinks" aria-hidden="true"></canvas><div class="dchips"><span class="dchip" style="--i:0">New reel</span><span class="dchip" style="--i:1">+99 likes</span><span class="dchip" style="--i:2">Trending now</span><span class="dchip" style="--i:3">3 new messages</span><span class="dchip" style="--i:4">Autoplay next</span><span class="dchip" style="--i:5">Someone tagged you</span><span class="dchip" style="--i:6">Live now</span><span class="dchip" style="--i:7">Sale: 70% off</span><span class="dchip" style="--i:8">Story update</span><span class="dchip" style="--i:9">Watch this!</span><span class="dchip" style="--i:10">12 notifications</span><span class="dchip" style="--i:11">Game invite</span></div>
-        <svg class="journey" viewBox="0 20 610 250" preserveAspectRatio="xMidYMid meet">
-          <path class="jp-bg" d="M60 190 C 115 190, 125 96, 180 96 S 250 176, 305 176 S 375 86, 430 86 S 505 156, 550 156"/><path id="jpath" class="jp" d="M60 190 C 115 190, 125 96, 180 96 S 250 176, 305 176 S 375 86, 430 86 S 505 156, 550 156"/>
-          <g class="nd" style="--k:0"><circle class="halo" cx="60" cy="190" r="22"/><circle class="ring" cx="60" cy="190" r="16"/><g transform="translate(60 190)"><path d="M-4 -5.5v11l9-5.5z" class="ic-f"/></g><text class="st" x="60" y="218">01</text><text x="60" y="234">Watch</text><text class="sub" x="60" y="250">Topic video</text></g><g class="nd" style="--k:1"><circle class="halo" cx="180" cy="96" r="22"/><circle class="ring" cx="180" cy="96" r="16"/><g transform="translate(180 96)"><path d="M-3.2 -3a3.2 3.2 0 1 1 4.3 3c-.8.3-1.1.8-1.1 1.4v.8M0 5v.1" class="ic-s"/></g><text class="st" x="180" y="40">02</text><text x="180" y="56">Quiz</text><text class="sub" x="180" y="72">Topic quiz</text></g><g class="nd" style="--k:2"><circle class="halo" cx="305" cy="176" r="22"/><circle class="ring" cx="305" cy="176" r="16"/><g transform="translate(305 176)"><path d="M-5 -7h7l3 3v11h-10z M-2.5 -1h5 M-2.5 2.5h3.5" class="ic-s"/></g><text class="st" x="305" y="204">03</text><text x="305" y="220">Test</text><text class="sub" x="305" y="236">Model test</text></g><g class="nd" style="--k:3"><circle class="halo" cx="430" cy="86" r="22"/><circle class="ring" cx="430" cy="86" r="16"/><g transform="translate(430 86)"><path d="M-7 -5.5a1.5 1.5 0 0 1 1.5-1.5h11a1.5 1.5 0 0 1 1.5 1.5v7a1.5 1.5 0 0 1-1.5 1.5h-7l-5.5 3.5z" class="ic-s"/></g><text class="st" x="430" y="30">04</text><text x="430" y="46">Ask</text><text class="sub" x="430" y="62">AI doubt help</text></g><g class="nd" style="--k:4"><circle class="halo" cx="550" cy="156" r="22"/><circle class="ring" cx="550" cy="156" r="16"/><g transform="translate(550 156)"><circle cx="0" cy="-3" r="3" class="ic-s"/><path d="M-6 7c.8-3.5 3.2-5 6-5s5.2 1.5 6 5" class="ic-s"/></g><text class="st" x="550" y="184">05</text><text x="550" y="200">Teacher</text><text class="sub" x="550" y="216">Live teacher</text></g>
-          <circle class="runner" r="6"><animateMotion id="jrun" dur="6.5s" begin="indefinite" repeatCount="indefinite" rotate="auto"><mpath href="#jpath"/></animateMotion></circle>
-        </svg>
+        <canvas class="dlinks" aria-hidden="true"></canvas><div class="dchips"><span class="dchip" style="--i:0">New reel</span><span class="dchip" style="--i:1">+99 likes</span><span class="dchip" style="--i:2">Trending</span><span class="dchip" style="--i:3">3 messages</span><span class="dchip" style="--i:4">Autoplay</span><span class="dchip" style="--i:5">Tagged you</span><span class="dchip" style="--i:6">Live now</span><span class="dchip" style="--i:7">70% off</span><span class="dchip" style="--i:8">New story</span><span class="dchip" style="--i:9">Watch this!</span><span class="dchip" style="--i:10">12 alerts</span><span class="dchip" style="--i:11">Game invite</span><span class="dchip" style="--i:12">Flash sale</span><span class="dchip" style="--i:13">Follower</span><span class="dchip" style="--i:14">Streak lost</span></div>
+        <svg class="journey" viewBox="0 0 610 280" preserveAspectRatio="xMidYMid meet"><path class="jp-bg" d="M61 170 C 122 170, 122 105, 183 105 S 244 170, 305 170 S 366 105, 427 105 S 488 170, 549 170"/><path id="jpath" class="jp" d="M61 170 C 122 170, 122 105, 183 105 S 244 170, 305 170 S 366 105, 427 105 S 488 170, 549 170"/><g class="nd" style="--k:0"><g class="pill"><rect x="11" y="155" width="100" height="30" rx="15"/><text x="61" y="174.5">Watch</text></g><circle class="halo" cx="61" cy="170" r="22"/><circle class="ring" cx="61" cy="170" r="16"/><g transform="translate(61 170)"><path d="M-4 -5.5v11l9-5.5z" class="ic-f"/></g><text x="61" y="210">Watch</text><text class="sub" x="61" y="226">Topic video</text></g><g class="nd" style="--k:1"><g class="pill"><rect x="133" y="90" width="100" height="30" rx="15"/><text x="183" y="109.5">Quiz</text></g><circle class="halo" cx="183" cy="105" r="22"/><circle class="ring" cx="183" cy="105" r="16"/><g transform="translate(183 105)"><path d="M-3.2 -3a3.2 3.2 0 1 1 4.3 3c-.8.3-1.1.8-1.1 1.4v.8M0 5v.1" class="ic-s"/></g><text x="183" y="61">Quiz</text><text class="sub" x="183" y="77">Topic quiz</text></g><g class="nd" style="--k:2"><g class="pill"><rect x="255" y="155" width="100" height="30" rx="15"/><text x="305" y="174.5">Test</text></g><circle class="halo" cx="305" cy="170" r="22"/><circle class="ring" cx="305" cy="170" r="16"/><g transform="translate(305 170)"><path d="M-5 -7h7l3 3v11h-10z M-2.5 -1h5 M-2.5 2.5h3.5" class="ic-s"/></g><text x="305" y="210">Test</text><text class="sub" x="305" y="226">Model test</text></g><g class="nd" style="--k:3"><g class="pill"><rect x="377" y="90" width="100" height="30" rx="15"/><text x="427" y="109.5">Ask</text></g><circle class="halo" cx="427" cy="105" r="22"/><circle class="ring" cx="427" cy="105" r="16"/><g transform="translate(427 105)"><path d="M-7 -5.5a1.5 1.5 0 0 1 1.5-1.5h11a1.5 1.5 0 0 1 1.5 1.5v7a1.5 1.5 0 0 1-1.5 1.5h-7l-5.5 3.5z" class="ic-s"/></g><text x="427" y="61">Ask</text><text class="sub" x="427" y="77">AI doubt help</text></g><g class="nd" style="--k:4"><g class="pill"><rect x="499" y="155" width="100" height="30" rx="15"/><text x="549" y="174.5">Teacher</text></g><circle class="halo" cx="549" cy="170" r="22"/><circle class="ring" cx="549" cy="170" r="16"/><g transform="translate(549 170)"><circle cx="0" cy="-3" r="3" class="ic-s"/><path d="M-6 7c.8-3.5 3.2-5 6-5s5.2 1.5 6 5" class="ic-s"/></g><text x="549" y="210">Teacher</text><text class="sub" x="549" y="226">Live teacher</text></g><circle class="runner" r="6"><animateMotion id="jrun" dur="6.5s" begin="indefinite" repeatCount="indefinite" rotate="auto"><mpath href="#jpath"/></animateMotion></circle></svg>
         <p class="focus-cap"><span class="c1">Social feeds pull students everywhere.</span><span class="c2">IgniteGyan keeps them on one path.</span></p>
       </div>
     </div>
@@ -1696,57 +1777,69 @@ section{padding-block:clamp(48px,6vw,88px)}
     document.querySelectorAll('[data-invest]').forEach(function(a){ a.addEventListener('click',function(){ setTimeout(function(){ var p=document.querySelector('.proj[data-proj="'+a.dataset.invest+'"]'); if(p) p.click(); },50); }); });
   })();
 
-  // IgniteGyan: looping "video" — 5s interconnected distraction web, 10s the IgniteGyan learning path
+  // IgniteGyan: the five learning stops sit inside the distraction web; the curved path links them one by one while the noise switches off
   (function(){
-    var st=document.getElementById('focusStage'); if(!st) return;
+    var st=document.getElementById('focusStage'); if(!st) return; st.classList.add('v6');
     var run=document.getElementById('jrun'), cv=st.querySelector('.dlinks'), ctx=cv.getContext('2d'), chips=[].slice.call(st.querySelectorAll('.dchip'));
-    var W=0,H=0, N=[], E=[], pulses=[], scene='off', timers=[], vis=false, acc='#888', line='#aaa';
-    var spots=[[6,8],[40,5],[72,10],[20,30],[50,22],[66,38],[4,52],[34,50],[64,58],[16,72],[46,76],[80,74]];
+    var nodes=[].slice.call(st.querySelectorAll('.nd')), jp=st.querySelector('#jpath');
+    var W=0,H=0, E=[], COL=[], pulses=[], timers=[], vis=false, active=false, acc='#888', line='#aaa';
+    var NS=[[1.4,3.3],[77.7,3.3],[51.2,3.3],[21.2,3.3],[7.1,18],[10.6,87.7],[2.7,34.6],[58.3,59.1],[39.2,41.2],[67.1,18],[58.3,87.7],[40.6,18]];
+    var order=[6,5,0,3,4,8,11,2,9,1,7,10], batches=[2,2,3,2,3];
+    var PTS=[[61,170],[183,105],[305,170],[427,105],[549,170]], L=jp.getTotalLength();
+    var frac=PTS.map(function(p){ var best=0,bd=1e9; for(var s=0;s<=400;s++){ var q=jp.getPointAtLength(L*s/400), d=Math.hypot(q.x-p[0],q.y-p[1]); if(d<bd){bd=d;best=s/400;} } return best; });
     function colors(){var cs=getComputedStyle(document.documentElement); acc=cs.getPropertyValue('--accent').trim(); line=cs.getPropertyValue('--muted').trim();}
+    function center(el){ var r=el.getBoundingClientRect(), s=st.getBoundingClientRect(); return {x:r.left-s.left+r.width/2, y:r.top-s.top+r.height/2}; }
+    function items(){ return chips.concat(nodes.map(function(n){return n.querySelector('.ring');})); }
     function layout(){
       var r=st.getBoundingClientRect(), d=Math.min(2,devicePixelRatio||1); W=r.width; H=r.height; cv.width=W*d; cv.height=H*d; ctx.setTransform(d,0,0,d,0,0); colors();
-      N=chips.map(function(c,i){ var s=spots[i%spots.length], w=c.offsetWidth, x=Math.min(W-w-6, s[0]/100*W), y=54+s[1]/100*(H-120);
-        c.style.transform='translate('+x+'px,'+y+'px)'; c.style.setProperty('--d',(i*0.37%2).toFixed(2)+'s'); return {x:x+w/2, y:y+14}; });
-      E=[]; N.forEach(function(a,i){ var ds=N.map(function(b,j){return [Math.hypot(a.x-b.x,a.y-b.y),j]}).filter(function(p){return p[1]!==i}).sort(function(p,q){return p[0]-q[0]});
-        for(var k=0;k<3;k++){ var j=ds[k][1]; if(!E.some(function(e){return (e[0]===i&&e[1]===j)||(e[0]===j&&e[1]===i)})) E.push([i,j]); } });
-      E.push([0,11],[2,9],[5,6],[1,10]);
+            // lay every tab out on a neat 5 x 4 grid, sharing the path's own coordinates
+      var svg=st.querySelector('.journey'), M=svg.getScreenCTM(), S=st.getBoundingClientRect(), k=M.a;
+      var XS=[61,183,305,427,549], YS=[40,105,170,235], STOP={'0,2':1,'1,1':1,'2,2':1,'3,1':1,'4,2':1};
+      var colpx=122*k, cw=Math.min(112,colpx-10), cf=Math.max(8.5,Math.min(12.5,cw/8.6)), ch=Math.max(22,Math.min(30,cf*2.5));
+      st.style.setProperty('--cw',cw+'px'); st.style.setProperty('--cf',cf+'px'); st.style.setProperty('--ch',ch+'px');
+      nodes.forEach(function(n){ var r=n.querySelector('.pill rect'), tx=n.querySelector('.pill text'), cx=+tx.getAttribute('x'), cyy=+r.getAttribute('y')+15;
+        r.setAttribute('width',(cw/k).toFixed(1)); r.setAttribute('x',(cx-cw/k/2).toFixed(1)); r.setAttribute('height',(ch/k).toFixed(1)); r.setAttribute('y',(cyy-ch/k/2).toFixed(1)); r.setAttribute('rx',(ch/k/2).toFixed(1));
+        tx.style.fontSize=(cf/k).toFixed(2)+'px'; tx.setAttribute('y',(cyy+cf/k*0.36).toFixed(1)); });
+      var cellsFree=[]; for(var r=0;r<4;r++) for(var c=0;c<5;c++) if(!STOP[c+','+r]) cellsFree.push([c,r]);
+      COL=[];
+      chips.forEach(function(el,i){ var cell=cellsFree[i]; if(!cell){ el.classList.add('mhide'); return; } el.classList.remove('mhide'); COL[i]=cell[0];
+        var px=XS[cell[0]]*k+M.e-S.left, py=YS[cell[1]]*M.d+M.f-S.top; el.style.transform='translate('+(px-cw/2).toFixed(1)+'px,'+(py-ch/2).toFixed(1)+'px)'; el.style.setProperty('--d',(i*0.37%2).toFixed(2)+'s'); });
+      var P=items().map(center); E=[]; var reach=colpx*1.5;
+      for(var i=0;i<P.length;i++) for(var j=i+1;j<P.length;j++){ var d=Math.hypot(P[i].x-P[j].x,P[i].y-P[j].y); if(d<reach) E.push([i,j,1-d/reach]); }
     }
+    function live(i){ return i<chips.length ? !chips[i].classList.contains('gone') && !chips[i].classList.contains('mhide') : !nodes[i-chips.length].classList.contains('on'); }
     function draw(t){
-      ctx.clearRect(0,0,W,H);
-      E.forEach(function(e,k){ var A=N[e[0]],B=N[e[1]]; ctx.globalAlpha=.35; ctx.strokeStyle=k%3?line:acc; ctx.lineWidth=1; ctx.setLineDash([4,5]); ctx.lineDashOffset=-t*0.02;
-        ctx.beginPath(); ctx.moveTo(A.x,A.y); ctx.lineTo(B.x,B.y); ctx.stroke(); });
+      ctx.clearRect(0,0,W,H); var P=items().map(center), edges=E.filter(function(e){return live(e[0])&&live(e[1]);});
+      edges.forEach(function(e,k){ var A=P[e[0]],B=P[e[1]]; ctx.globalAlpha=.08+.34*e[2]*e[2]; ctx.strokeStyle=k%3?line:acc; ctx.lineWidth=1; ctx.setLineDash([4,5]); ctx.lineDashOffset=-t*0.02; ctx.beginPath(); ctx.moveTo(A.x,A.y); ctx.lineTo(B.x,B.y); ctx.stroke(); });
       ctx.setLineDash([]);
-      if(Math.random()<0.18){ pulses.push({e:E[(Math.random()*E.length)|0], p:0, dir:Math.random()<.5}); }
-      pulses=pulses.filter(function(q){ q.p+=0.022; if(q.p>=1) return false; var A=N[q.e[q.dir?0:1]],B=N[q.e[q.dir?1:0]], x=A.x+(B.x-A.x)*q.p, y=A.y+(B.y-A.y)*q.p;
-        ctx.globalAlpha=.9; ctx.fillStyle=acc; ctx.beginPath(); ctx.arc(x,y,2.6,0,7); ctx.fill(); return true; });
+      if(edges.length && Math.random()<0.16) pulses.push({e:edges[(Math.random()*edges.length)|0], p:0, dir:Math.random()<.5});
+      pulses=pulses.filter(function(q){ if(!live(q.e[0])||!live(q.e[1])) return false; q.p+=0.022; if(q.p>=1) return false; var A=P[q.e[q.dir?0:1]],B=P[q.e[q.dir?1:0]];
+        ctx.globalAlpha=.8; ctx.fillStyle=acc; ctx.beginPath(); ctx.arc(A.x+(B.x-A.x)*q.p, A.y+(B.y-A.y)*q.p, 2.3,0,7); ctx.fill(); return true; });
       ctx.globalAlpha=1;
     }
-    function loop(t){ if(vis && scene==='distract') draw(t); requestAnimationFrame(loop); }
-    function clearT(){ timers.forEach(clearTimeout); timers=[]; }
+    function loop(t){ if(vis&&active) draw(t); requestAnimationFrame(loop); }
     function later(fn,ms){ timers.push(setTimeout(fn,ms)); }
-    function distract(){
-      st.classList.add('reset'); st.classList.remove('popped','focused','running'); try{run.endElement();}catch(e){}
-      layout(); pulses=[]; scene='distract';
-      requestAnimationFrame(function(){ st.classList.remove('reset'); st.classList.remove('swap'); });
-      later(function(){ st.classList.add('swap'); later(mission,650); }, 5000);
+    function clearT(){ timers.forEach(clearTimeout); timers=[]; }
+    function setPath(f,anim){ jp.style.strokeDasharray=L; jp.style.transition=anim?'stroke-dashoffset 1.2s cubic-bezier(.45,0,.2,1)':'none'; jp.style.strokeDashoffset=(L*(1-f)).toFixed(1); }
+    function reset(){ st.classList.remove('done','running','fading'); try{run.endElement();}catch(e){} chips.forEach(function(c){c.classList.remove('gone')}); nodes.forEach(function(n){n.classList.remove('on')}); setPath(0,false); pulses=[]; }
+    function play(){
+      clearT(); reset(); layout(); active=true;
+      var t=2800;
+      nodes.forEach(function(n,k){
+        later(function(){ if(k>0) setPath(frac[k],true); }, t);
+        later(function(){ n.classList.add('on'); chips.forEach(function(c,i){ if(COL[i]===k) c.classList.add('gone'); }); }, t+(k?1000:0));
+        t+=1700;
+      });
+      later(function(){ st.classList.add('done'); }, t);
+      later(function(){ st.classList.add('running'); try{run.beginElement();}catch(e){} }, t+400);
+      later(function(){ st.classList.add('fading'); }, t+6500);
+      later(play, t+7200);
     }
-    function mission(){
-      scene='mission'; ctx.clearRect(0,0,W,H);
-      st.classList.remove('running','focused'); st.classList.add('reset','popped'); void st.offsetWidth;   // path at its undrawn start
-      st.classList.remove('reset'); void st.offsetWidth;
-      st.classList.remove('swap');
-      requestAnimationFrame(function(){ requestAnimationFrame(function(){ st.classList.add('focused'); }); });   // now draw step by step
-      later(function(){ try{run.beginElement();}catch(e){} st.classList.add('running'); }, 3700);
-      later(function(){ st.classList.add('swap'); later(distract,650); }, 10000);
-    }
-    function start(){ clearT(); st.classList.add('swap'); later(distract,50); }
-    function stop(){ clearT(); scene='off'; try{run.endElement();}catch(e){} }
-    if(reduce){ st.classList.add('popped','focused'); return; }
-    new IntersectionObserver(function(en){ var e=en[0]; vis=e.isIntersecting;
-      if(e.isIntersecting && e.intersectionRatio>=0.4 && scene==='off') start(); else if(!e.isIntersecting) stop();
-    },{threshold:[0,0.4]}).observe(st);
-    new ResizeObserver(function(){ if(scene==='distract') layout(); }).observe(st);
-    new MutationObserver(colors).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme','data-palette']});
+    function stop(){ clearT(); active=false; reset(); ctx.clearRect(0,0,W,H); }
+    if(reduce){ layout(); chips.forEach(function(c){c.classList.add('gone')}); nodes.forEach(function(n){n.classList.add('on')}); setPath(1,false); st.classList.add('done'); return; }
+    new IntersectionObserver(function(en){ var e=en[0]; vis=e.isIntersecting; if(vis && e.intersectionRatio>=0.4 && !active) play(); else if(!vis && active) stop(); },{threshold:[0,0.4]}).observe(st);
+    new ResizeObserver(function(){ if(active) layout(); }).observe(st);
+    new MutationObserver(colors).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
     requestAnimationFrame(loop);
   })();
 
