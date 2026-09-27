@@ -73,7 +73,7 @@ p{margin:0}
 .links .btn{color:var(--ground); padding:10px 18px}
 .links .btn:hover{color:var(--on-accent)}
 .menu-btn{display:none; background:none; border:1px solid var(--line); border-radius:999px; color:var(--ink); padding:9px 16px; font:500 14px var(--body); cursor:pointer}
-@media (max-width:860px){
+@media (max-width:1080px){
   .links{display:none; position:absolute; top:68px; left:0; right:0; flex-direction:column; align-items:flex-start; gap:18px; padding:24px var(--gutter) 28px; background:var(--ground); border-bottom:1px solid var(--line)}
   .links.open{display:flex}
   .menu-btn{display:block}
@@ -879,6 +879,57 @@ section{padding-block:clamp(48px,6vw,88px)}
 .fcard .fbody h3{padding-right:100px}
 @media (max-width:620px){.fcard .fsocial{position:static; margin-top:18px}.fcard .fbody h3{padding-right:0}.fcard .fsocial .fmsg{position:static}}
 
+/* leadership row: 3 cards */
+.crew{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:1100px){.crew{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:760px){.crew{grid-template-columns:1fr}}
+@media (min-width:1101px){.crew .cto-top{flex-direction:column; align-items:flex-start; gap:16px}.crew .cto-ph{width:120px}.crew .cto-id h3{white-space:nowrap}.crew .cto-focus ul{grid-template-columns:1fr 1fr}}
+/* leadership cards: side-by-side scroller */
+.crew-wrap{position:relative; margin-top:clamp(32px,4vw,56px)}
+.crew-wrap .crew{display:flex !important; gap:18px; margin-top:0 !important; overflow-x:auto; scroll-snap-type:x mandatory; scroll-behavior:smooth; background:none !important; border:0 !important; border-radius:0 !important; padding:4px 2px 14px; scrollbar-width:thin; -webkit-overflow-scrolling:touch}
+.crew-wrap .crew > div{flex:0 0 min(400px, 86%); scroll-snap-align:start; border:1px solid var(--line); border-radius:20px}
+@media (min-width:1101px){.crew-wrap .crew > div{flex-basis:calc((100% - 36px)/3)}}
+.crew-nav{display:flex; justify-content:flex-end; gap:8px; margin-bottom:12px}
+.cnav{width:42px; height:42px; border-radius:50%; border:1px solid var(--line); background:var(--paper); color:var(--ink); font-size:18px; cursor:pointer; transition:border-color .2s, opacity .2s}
+.cnav:hover{border-color:var(--accent)}
+.cnav:disabled{opacity:.35; cursor:default}
+.crew-wrap.nooverflow .crew-nav{display:none}
+
+.crew .cto-focus ul{gap:6px 14px; font-size:13.5px}
+.crew .cto-focus li{font-size:13.5px; line-height:1.35}
+.crew .cto{gap:18px}
+.crew .cto-bio{line-height:1.6}
+/* landscape phones & short screens */
+@media (orientation:landscape) and (max-height:560px){
+  .nav .wrap{height:54px}
+  .brand small{display:none}
+  .links{top:54px !important; max-height:calc(100vh - 54px); overflow:auto}
+  .hero .wrap{padding-block:26px 30px}
+  .hero h1{font-size:clamp(38px,13vh,70px); max-width:none; margin-top:14px}
+  .hero .lede{margin-top:16px; max-width:640px}
+  .hero .ctas{margin-top:18px}
+  section{padding-block:36px}
+  .careers{padding-block:18px}
+  .head{margin-bottom:22px; gap:12px}
+  .head h2,.head h2:has(.sl){font-size:clamp(26px,8vh,42px)}
+  .reveal-text,.thesis-body .reveal-text{font-size:clamp(20px,6.2vh,32px)}
+  .thesis-body{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr) !important; gap:24px}
+  .logo-stage{max-width:240px}
+  .pair h3{font-size:clamp(24px,8vh,40px)}
+  .lab h3{font-size:clamp(24px,7.5vh,38px)}
+  .horizon h2{font-size:clamp(32px,11vh,58px); max-width:none}
+  .fcard{grid-template-columns:minmax(180px,240px) minmax(0,1fr) !important}
+  .fphoto{max-height:calc(100vh - 90px)}
+  .founders .fphoto{aspect-ratio:auto; height:min(320px, calc(100vh - 90px))}
+  .cview h1{font-size:clamp(34px,11vh,60px)}
+  .cview .chero{padding-block:28px 24px}
+  .cblock{padding-block:32px}
+  .focus-stage{height:min(300px, calc(100vh - 80px)); aspect-ratio:auto}
+  .ig-head{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr) !important}
+  .figures strong{font-size:clamp(34px,10vh,56px)}
+  .mode-toggle{padding:7px 12px; font-size:12px}
+}
+
 /* glow field */
 #field{position:absolute; inset:0; width:100%; height:100%; z-index:0; pointer-events:none; display:block}
 #halo{position:absolute; left:0; top:0; width:700px; height:700px; border-radius:50%; pointer-events:none; z-index:0; opacity:.55; transition:opacity .6s; background:radial-gradient(closest-side, color-mix(in srgb, var(--accent) 22%, transparent), transparent 70%); will-change:transform}
@@ -1144,25 +1195,24 @@ section{padding-block:clamp(48px,6vw,88px)}
           </div>
         </div>
       </article>
-      <article class="fcard">
-        <figure class="fphoto"><img src="naveen.jpg" alt="Naveen B S" loading="lazy"></figure>
-        <div class="fbody">
-          <span class="fnum">02</span>
-          <h3>Naveen B S</h3>
-          <p class="frole">Co-founder &amp; Director</p>
-          <blockquote>If we can't explain how it reached that answer, it isn't finished.</blockquote>
-          <p class="bio">Sets the company's technical direction and owns the architecture behind every product — distributed systems, data pipelines, and the review gates a model must clear before it ships. Fifteen-plus years building enterprise platforms, now aimed at applied AI.</p>
-          <p class="bio bio2">He co-founded Palintropic to prove that powerful AI and honest AI can be the same thing. He built the company's engineering on one rule: no system leaves the lab until it can be explained, audited and reversed. That foundation lets Palintropic take on problems across learning, wellness and everyday life — and scale from a single user to millions without losing sight of the person on the other side of the screen.</p>
-          <div class="fexp"><p class="eyebrow">Expertise</p><ul><li>Systems Architecture</li><li>Applied AI</li><li>Engineering Leadership</li><li>Ethical Governance</li></ul></div>
-          <div class="fsocial">
-            <button type="button" class="icon copy-mail" data-email="naveen@palintropic.in" aria-label="Copy Naveen B S's email: naveen@palintropic.in" title="naveen@palintropic.in"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5 12 13l8.5-6.5"/></svg></button>
-            <a class="icon" href="https://www.linkedin.com/" aria-label="Naveen B S on LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 9.5v9M6.5 5.6v.1M10.5 18.5v-9M10.5 13.2c0-2.3 1.4-3.9 3.4-3.9s3.1 1.3 3.1 3.9v5.3"/></svg></a>
-            <span class="fmsg" aria-live="polite"></span>
+    </div>
+    <div class="crew-wrap"><div class="crew-nav"><button type="button" class="cnav" id="crewPrev" aria-label="Previous">←</button><button type="button" class="cnav" id="crewNext" aria-label="Next">→</button></div><div class="crew" id="crew">
+      <div class="cto">
+        <div class="cto-top">
+          <figure class="cto-ph"><img src="naveen.jpg" alt="Naveen B S" width="160" height="160"></figure>
+          <div class="cto-id">
+            <span class="cto-tag">Leadership · Finance &amp; Ops</span>
+            <h3>Naveen B S</h3>
+            <p class="cto-role">CFO &amp; COO</p>
+            <p class="cto-loc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg>Bengaluru</p>
           </div>
         </div>
-      </article>
-    </div>
-    <div class="crew">
+        <p class="cto-bio">Runs finance and operations — budgets, funding, compliance and the day-to-day systems that keep Palintropic moving. Brings fifteen-plus years of building enterprise platforms to making sure every rupee and every process serves the research.</p>
+        <div class="cto-focus">
+          <p class="eyebrow">Focus areas</p>
+          <ul><li>Financial planning</li><li>Fundraising &amp; investor relations</li><li>Operations</li><li>Compliance &amp; governance</li><li>Systems architecture</li><li>Applied AI</li></ul>
+        </div>
+      </div>
       <div class="cto">
         <div class="cto-top">
           <figure class="cto-ph"><img src="harsha.jpg" alt="Harsha K R" width="160" height="160"></figure>
@@ -1198,7 +1248,7 @@ section{padding-block:clamp(48px,6vw,88px)}
           <a class="btn ghost" href="#talent-pool">Join the talent pool</a>
         </div>
       </div>
-    </div>
+    </div></div>
   </div>
 </section>
 
@@ -1862,6 +1912,16 @@ section{padding-block:clamp(48px,6vw,88px)}
   })();
 
 
+
+  // leadership scroller
+  (function(){
+    var c=document.getElementById('crew'); if(!c) return; var w=c.parentNode, p=document.getElementById('crewPrev'), n=document.getElementById('crewNext');
+    function step(){ var k=c.querySelector(':scope > div'); return k? k.getBoundingClientRect().width+18 : 300; }
+    function upd(){ var max=c.scrollWidth-c.clientWidth; w.classList.toggle('nooverflow', max<4); p.disabled=c.scrollLeft<4; n.disabled=c.scrollLeft>max-4; }
+    p.addEventListener('click',function(){ c.scrollBy({left:-step(),behavior:reduce?'auto':'smooth'}); });
+    n.addEventListener('click',function(){ c.scrollBy({left:step(),behavior:reduce?'auto':'smooth'}); });
+    c.addEventListener('scroll',upd,{passive:true}); new ResizeObserver(upd).observe(c); upd();
+  })();
   // school demo request
   (function(){
     var box=document.getElementById('school-form'), open=document.getElementById('scOpen'); if(!box) return;
