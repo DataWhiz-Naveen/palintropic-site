@@ -50,15 +50,16 @@
       "jobTitle": "Founder & CEO",
       "image": "https://palintropic.in/pavani.jpg",
       "worksFor": { "@id": "https://palintropic.in/#org" },
-      "sameAs": [ "https://www.wikidata.org/wiki/Q141591266" ]
+      "sameAs": [ "https://www.wikidata.org/wiki/Q141591266", "https://www.linkedin.com/in/pavanisubramani" ]
     },
     {
       "@type": "Person",
       "@id": "https://palintropic.in/#naveen",
       "name": "Naveen B S",
-      "jobTitle": "CFO & COO",
+      "jobTitle": "Director & CFO",
       "image": "https://palintropic.in/naveen.jpg",
-      "worksFor": { "@id": "https://palintropic.in/#org" }
+      "worksFor": { "@id": "https://palintropic.in/#org" },
+      "sameAs": [ "https://www.linkedin.com/in/naveenbs2209" ]
     },
     {
       "@type": "Person",
@@ -78,7 +79,33 @@
   ]
 }
 </script>
-<style>html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<style>html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}
+/* compact team row: shorter Harsha / open-seat / internship cards */
+.crew-wrap .crew > div{padding:clamp(20px,1.8vw,26px) !important; gap:14px !important}
+.crew-wrap .crew .cto-top{flex-direction:row !important; align-items:center !important; gap:16px !important}
+.crew-wrap .crew .cto-ph{width:84px !important; border-radius:16px; box-shadow:0 0 0 3px color-mix(in srgb, var(--accent) 12%, transparent)}
+.crew-wrap .crew .cto-tag{margin-bottom:2px; padding:3px 8px; font-size:9.5px}
+.crew-wrap .crew .cto-id h3{font-size:clamp(22px,1.9vw,26px)}
+.crew-wrap .crew .cto-role{font-size:14px}
+.crew-wrap .crew .cto-bio,.crew-wrap .crew .seat-sub{font-size:14px; line-height:1.55}
+.crew-wrap .crew .seat-sub{margin-top:6px}
+.crew-wrap .crew .cto-focus{padding-top:12px}
+.crew-wrap .crew .cto-focus ul{margin-top:8px}
+.crew-wrap .crew .seat-ic{width:44px; height:44px; border-radius:13px}
+.crew-wrap .crew .seat-ic svg{width:22px; height:22px}
+.crew-wrap .crew .seat-h{font-size:clamp(22px,1.9vw,26px)}
+.crew-wrap .crew .seat-areas div{padding:8px 12px}
+.crew-wrap .crew .seat-areas strong{font-size:20px}
+.crew-wrap .crew .seat-cta{flex-wrap:nowrap; gap:8px}
+.crew-wrap .crew .seat-cta .btn{padding:9px 14px; font-size:13px; white-space:nowrap}
+@media (max-width:460px){.crew-wrap .crew .seat-cta{flex-wrap:wrap}}
+/* even spacing: founder cards -> team row -> careers */
+#people .crew-wrap{margin-top:clamp(20px,2.4vw,32px)}
+#people .crew-wrap .crew{padding-bottom:6px}
+#people .crew-nav{margin-bottom:10px}
+#people .crew-wrap:not(.nooverflow){margin-top:clamp(10px,1.2vw,16px)}
+#people{padding-bottom:clamp(16px,2.4vw,32px)}
+</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
@@ -1253,30 +1280,31 @@ section{padding-block:clamp(48px,6vw,88px)}
           <p class="bio bio2">She founded Palintropic on a simple conviction: technology should be built for the people who use it, not the other way round. Under her leadership, every Palintropic product starts with a real learner, is shaped by what they actually need, and ships only when it has proven it helps — the standard behind IgniteGyan and everything the company builds next.</p>
           <div class="fexp"><p class="eyebrow">Expertise</p><ul><li>Applied Research</li><li>Learning Design</li><li>Product Content</li><li>Ethical UX</li></ul></div>
           <div class="fsocial">
-            <button type="button" class="icon copy-mail" data-email="pavani@palintropic.in" aria-label="Copy Pavani N S's email: pavani@palintropic.in" title="pavani@palintropic.in"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5 12 13l8.5-6.5"/></svg></button>
-            <a class="icon" href="https://www.linkedin.com/" aria-label="Pavani N S on LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 9.5v9M6.5 5.6v.1M10.5 18.5v-9M10.5 13.2c0-2.3 1.4-3.9 3.4-3.9s3.1 1.3 3.1 3.9v5.3"/></svg></a>
+            <button type="button" class="icon copy-mail" data-email="founder@palintropic.in" aria-label="Email Pavani N S (founder@palintropic.in)" title="Email founder@palintropic.in"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5 12 13l8.5-6.5"/></svg></button>
+            <a class="icon" href="https://www.linkedin.com/in/pavanisubramani" target="_blank" rel="noopener" aria-label="Pavani N S on LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 9.5v9M6.5 5.6v.1M10.5 18.5v-9M10.5 13.2c0-2.3 1.4-3.9 3.4-3.9s3.1 1.3 3.1 3.9v5.3"/></svg></a>
+            <span class="fmsg" aria-live="polite"></span>
+          </div>
+        </div>
+      </article>
+      <article class="fcard">
+        <figure class="fphoto"><img src="naveen.jpg" alt="Naveen B S" loading="lazy"></figure>
+        <div class="fbody">
+          <span class="fnum">02</span>
+          <h3>Naveen B S</h3>
+          <p class="frole">Director &amp; CFO</p>
+          <blockquote>A rupee earns its place by moving the research forward, not by looking good in a forecast.</blockquote>
+          <p class="bio">Owns how Palintropic is funded and run — financial strategy, fundraising, investor relations, and the compliance that keeps every commitment honest. Builds the operating systems that let a small team move with the discipline of a much larger one.</p>
+          <p class="bio bio2">He came to Palintropic with a simple conviction: a research company is only as strong as the systems underneath it. Years of architecting enterprise platforms taught him to design for scale, security and the long run — and he runs the company the same way. Under his stewardship, every rupee is traced to the work it serves, every process is designed rather than inherited, and every backer can see where their money goes — the foundation beneath IgniteGyan and everything Palintropic builds next.</p>
+          <div class="fexp"><p class="eyebrow">Expertise</p><ul><li>Financial Strategy</li><li>Fundraising &amp; Investor Relations</li><li>Compliance &amp; Governance</li><li>Systems Architecture</li></ul></div>
+          <div class="fsocial">
+            <button type="button" class="icon copy-mail" data-email="director@palintropic.in" aria-label="Email Naveen B S (director@palintropic.in)" title="Email director@palintropic.in"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5 12 13l8.5-6.5"/></svg></button>
+            <a class="icon" href="https://www.linkedin.com/in/naveenbs2209" target="_blank" rel="noopener" aria-label="Naveen B S on LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 9.5v9M6.5 5.6v.1M10.5 18.5v-9M10.5 13.2c0-2.3 1.4-3.9 3.4-3.9s3.1 1.3 3.1 3.9v5.3"/></svg></a>
             <span class="fmsg" aria-live="polite"></span>
           </div>
         </div>
       </article>
     </div>
     <div class="crew-wrap"><div class="crew-nav"><button type="button" class="cnav" id="crewPrev" aria-label="Previous">←</button><button type="button" class="cnav" id="crewNext" aria-label="Next">→</button></div><div class="crew" id="crew">
-      <div class="cto">
-        <div class="cto-top">
-          <figure class="cto-ph"><img src="naveen.jpg" alt="Naveen B S" width="160" height="160"></figure>
-          <div class="cto-id">
-            <span class="cto-tag">Leadership · Finance &amp; Ops</span>
-            <h3>Naveen B S</h3>
-            <p class="cto-role">CFO &amp; COO</p>
-            <p class="cto-loc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg>Bengaluru</p>
-          </div>
-        </div>
-        <p class="cto-bio">Runs finance and operations — budgets, funding, compliance and the day-to-day systems that keep Palintropic moving. Brings fifteen-plus years of building enterprise platforms to making sure every rupee and every process serves the research.</p>
-        <div class="cto-focus">
-          <p class="eyebrow">Focus areas</p>
-          <ul><li>Financial planning</li><li>Fundraising &amp; investor relations</li><li>Operations</li><li>Compliance &amp; governance</li><li>Systems architecture</li><li>Applied AI</li></ul>
-        </div>
-      </div>
       <div class="cto">
         <div class="cto-top">
           <figure class="cto-ph"><img src="harsha.jpg" alt="Harsha K R" width="160" height="160"></figure>
@@ -1310,6 +1338,24 @@ section{padding-block:clamp(48px,6vw,88px)}
         <div class="seat-cta">
           <a class="btn cprimary" href="#careers-page">See all 10 roles <span class="arr">→</span></a>
           <a class="btn ghost" href="#talent-pool">Join the talent pool</a>
+        </div>
+      </div>
+      <div class="open seat intern">
+        <div class="seat-top">
+          <span class="seat-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2.5 9 12 4.5 21.5 9 12 13.5z"/><path d="M6.5 11v4.6c1.4 1.5 3.3 2.4 5.5 2.4s4.1-.9 5.5-2.4V11"/><path d="M21.5 9v5.5"/></svg></span>
+          <span class="seat-status"><span class="pulse" aria-hidden="true"></span>Internships</span>
+        </div>
+        <div>
+          <h3 class="seat-h">Learn by shipping real work.</h3>
+          <p class="seat-sub">Work beside the founders on live research and real products — not side tasks. You leave with work you can point to, and the judgement to know why it mattered.</p>
+        </div>
+        <div class="seat-areas">
+          <div><strong>AI</strong><span>Data &amp; research</span></div>
+          <div><strong>Dev</strong><span>Engineering</span></div>
+          <div><strong>UX</strong><span>Design</span></div>
+        </div>
+        <div class="seat-cta">
+          <a class="btn cprimary" href="#talent-pool">Apply for an internship <span class="arr">→</span></a>
         </div>
       </div>
     </div></div>
@@ -1735,10 +1781,14 @@ section{padding-block:clamp(48px,6vw,88px)}
   })();
 
   // founder email copy
+  // founder mail icons: Gmail compose on desktop, default mail app (Gmail app if set) on phones
   document.querySelectorAll('.copy-mail').forEach(function(b){b.addEventListener('click',function(){
-    var m=b.parentNode.querySelector('.fmsg'), e=b.dataset.email;
-    var ok=function(){m.textContent='Copied '+e; setTimeout(function(){m.textContent=''},2200)};
-    try{navigator.clipboard.writeText(e).then(ok,function(){m.textContent=e});}catch(x){m.textContent=e}
+    var e=b.dataset.email, m=b.parentNode.querySelector('.fmsg');
+    var mobile=window.matchMedia&&matchMedia('(pointer:coarse)').matches;
+    if(mobile){ location.href='mailto:'+e; return; }
+    var w=window.open('https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent(e),'_blank','noopener');
+    if(!w){ location.href='mailto:'+e; }
+    if(m){ m.textContent=e; setTimeout(function(){m.textContent=''},3000); }
   })});
 
   // careers view — simple in-page routing
